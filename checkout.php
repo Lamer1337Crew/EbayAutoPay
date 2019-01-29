@@ -1,12 +1,4 @@
 <?php
-/*
-
-Auto Pay / Buy Items in Ebay.com Website
-Author : FO (ALECTRA)
-https://web.facebook.com/s7akeholder
-
-*/
-
 set_time_limit(0); 
 
 $cookies = getcwd() . "/otobay.log";
