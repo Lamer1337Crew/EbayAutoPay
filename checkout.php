@@ -5,18 +5,17 @@ Auto Pay / Buy Items in Ebay.com Website
 Author : FO (ALECTRA)
 https://web.facebook.com/s7akeholder
 
-- ini hanya contoh curl step by step untuk membeli barang di ebay
-- Silahkan edit sesuai method ebay yang masih work
-- Karena saya bukan kerder, jadi gatau methodnya, dan cuma bisa bikin sebatas contoh alur membeli barang di ebay menggunakan PHP
-
-Credit card yg saya gunakan disini hasil dari generate di : https://ccardgenerator.com/generat-visa-card-numbers.php
-
 */
 
 set_time_limit(0); 
-unlink(getcwd() . "/otobay.log");
 
-$get = http('https://pay.ebay.com/rgxo?action=create&rypsvc=true&pagename=ryp&item=123306711552&quantity=1&transactionid=-1&rev=24');
+$cookies = getcwd() . "/otobay.log";
+
+if(file_exists($cookies)){
+	unlink($cookies);
+}
+
+$get = http('https://pay.ebay.com/rgxo?action=create&rypsvc=true&pagename=ryp&TransactionId=-1&rev=8&item=163404756063&quantity=1&qty=1&var=462724642770');
 
 if($get){
 	
